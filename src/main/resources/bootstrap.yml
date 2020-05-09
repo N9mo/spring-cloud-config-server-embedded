@@ -1,0 +1,28 @@
+#Spring Cloud Config Server supports a git repository URL with placeholders: {uri}/{application}/{profile}
+#Properties naming: {application}-{profile}.yml
+spring:
+  application:
+    name: spring-cloud-config-server-embedded
+    # Choose (uncomment) target properties
+  profiles:
+#    active: propertiesOne
+#    active: propertiesTwo
+    active: devLocal
+  cloud:
+    config:
+      failFast: true
+      server:
+        # This flag indicates that the server should configure itself from its own remote repository
+        bootstrap: true
+        git:
+          uri: https://github.com/N9mo/Configuration.git
+          # Use credentials for private repository
+#          username: someUsername
+#          password: somePassword
+
+        # prefix string to avoid conflicting with context/server path of application
+#        prefix: config
+
+#for dev needs, comment out on prod
+server:
+  port: 9093
