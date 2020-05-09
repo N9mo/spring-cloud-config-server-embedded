@@ -7,7 +7,7 @@ spring:
   profiles:
 #    active: propertiesOne
 #    active: propertiesTwo
-    active: devLocal
+    active: propertiesZero
   cloud:
     config:
       failFast: true
@@ -15,7 +15,7 @@ spring:
         # This flag indicates that the server should configure itself from its own remote repository
         bootstrap: true
         git:
-          uri: https://github.com/N9mo/Configuration.git
+          uri: https://github.com/N9mo/spring-cloud-configuration.git
           # Use credentials for private repository
 #          username: someUsername
 #          password: somePassword
