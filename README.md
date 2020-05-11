@@ -1,6 +1,6 @@
 # spring-cloud-config-server-embedded
 Demo Spring Boot application with embedded Spring Cloud Config Server and Spring Boot Actuator for updating properties 
-at run time from remote configuration storage. 
+at run time from [remote configuration storage](https://github.com/N9mo/spring-cloud-configuration). 
 
 **Spring Cloud Config:**
 Spring Cloud configuration provides support for externalized configuration in a distributed system. 
