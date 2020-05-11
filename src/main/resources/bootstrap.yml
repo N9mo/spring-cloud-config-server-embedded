@@ -23,6 +23,14 @@ spring:
         # prefix string to avoid conflicting with context/server path of application
 #        prefix: config
 
+#Actuator
+#Enable the refresh properties endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
 #for dev needs, comment out on prod
 server:
   port: 9093
