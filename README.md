@@ -1,5 +1,6 @@
 # spring-cloud-config-server-embedded
-Spring Boot application with embedded Spring Cloud Config Server
+Demo Spring Boot application with embedded Spring Cloud Config Server and Spring Boot Actuator for updating properties 
+at run time from remote configuration storage. 
 
 **Spring Cloud Config:**
 Spring Cloud configuration provides support for externalized configuration in a distributed system. 
@@ -40,4 +41,20 @@ spring:
 **Resources:**
 - Spring Cloud configuration server [cloud.spring.io](https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_server.html)
 - Embedding the Config Server [cloud.spring.io](https://cloud.spring.io/spring-cloud-config/multi/multi__embedding_the_config_server.html)
+
+**Spring Boot Actuator:**
+Spring Actuator provides different endpoints for health, metrics, and configs, but nothing for refreshing beans. 
+Thus, we need Spring Cloud to add a /refresh endpoint to it. This endpoint reloads all property sources of Environment 
+and then publishes an EnvironmentChangeEvent:
+```
+POST: http://host:port/actuator/refresh
+```
+Spring Cloud also has introduced _@RefreshScope_, and we can use it for configuration classes or beans. 
+As a result, the default scope will be refresh instead of singleton.
+Using refresh scope, Spring will clear its internal cache of these components on an EnvironmentChangeEvent. 
+Then, on the next access to the bean, a new instance is created.
+
+**Resources:**
+- Spring Boot Actuator Web API Documentation [docs.spring.io](https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/actuator-api/html/#metrics-retrieving-metric)
+
 
