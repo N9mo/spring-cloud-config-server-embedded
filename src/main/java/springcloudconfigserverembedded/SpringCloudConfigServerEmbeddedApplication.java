@@ -10,6 +10,13 @@ import javax.annotation.PostConstruct;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+
+/**
+ * Main application class
+ *
+ * @author Yury Zuzansky
+ * @since 1.0
+ */
 @SpringBootApplication
 @RefreshScope
 public class SpringCloudConfigServerEmbeddedApplication {

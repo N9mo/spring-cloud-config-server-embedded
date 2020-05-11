@@ -8,6 +8,9 @@ import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * Spring bean configuration class
+ *
+ * @author Yury Zuzansky
+ * @since 1.0
  */
 @Configuration
 public class AppBeanConfigurator {

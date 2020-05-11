@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
  * As a result, the default scope will be refresh instead of singleton.
  * Using @RefreshScope, Spring will clear its internal cache of these components on an EnvironmentChangeEvent.
  * Then, on the next access to the bean, a new instance is created.
+ *
+ * @author Yury Zuzansky
+ * @since 1.0
  */
 @Service
 @RefreshScope
